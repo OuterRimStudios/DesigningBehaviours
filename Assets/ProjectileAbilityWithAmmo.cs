@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiniGun : Ability, IReloadable
+public class ProjectileAbilityWithAmmo : Ability, IReloadable
 {
     public int maxAmmo;
     public float reloadTime;
@@ -28,9 +28,9 @@ public class MiniGun : Ability, IReloadable
         {
             base.ActivateAbility();
             ammo--;
-            print("MiniGun Ammo: " + ammo);
+            print("Firing " + abilityName);
 
-            if(ammo <= 0)
+            if (ammo <= 0)
             {
                 reloading = true;
                 StartCoroutine(Reloading());
