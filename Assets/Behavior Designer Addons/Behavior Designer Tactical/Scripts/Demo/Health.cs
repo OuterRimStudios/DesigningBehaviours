@@ -10,7 +10,7 @@ namespace BehaviorDesigner.Runtime.Tactical
         // The amount of health to begin with
         public float startHealth = 100;
 
-        private float currentHealth;
+        public float currentHealth;
 
         /// <summary>
         /// Initailzies the current health.
@@ -37,6 +37,11 @@ namespace BehaviorDesigner.Runtime.Tactical
         public bool IsAlive()
         {
             return currentHealth > 0;
+        }
+
+        public float CheckHealthPercentage()
+        {
+            return (currentHealth / startHealth) * 100;
         }
 
         /// <summary>

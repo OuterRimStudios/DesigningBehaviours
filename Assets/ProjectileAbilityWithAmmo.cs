@@ -46,6 +46,7 @@ public class ProjectileAbilityWithAmmo : Ability, IReloadable
 
     IEnumerator Reloading()
     {
+        print("Reloading... ");
         yield return new WaitForSeconds(reloadTime);
         Reload();
         reloading = false;
