@@ -19,16 +19,16 @@ public class MiniGun : Ability, IReloadable
     private void Reload()
     {
         ammo = maxAmmo;
-        //print("Reloaded");
+        print("Reloaded");
     }
 
     public override void ActivateAbility()
     {
-        if(CanShoot())
+        if(CanShoot() && !IsReloading())
         {
             base.ActivateAbility();
             ammo--;
-            //print("MiniGun Ammo: " + ammo);
+            print("MiniGun Ammo: " + ammo);
 
             if(ammo <= 0)
             {
